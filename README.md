@@ -1,15 +1,14 @@
-# mmTokenizer
+# mmHomonymDisambiguator
 
-**mmTokenizer** is a Python library for Myanmar (Burmese) text segmentation.  
-It provides **syllable segmentation** and **word segmentation** using rule-based and lexicon-based approaches.
+**mmHomonymDisambiguator** is a Python library for detecting and disambiguating Myanmar (Burmese) homonyms. It provides **homonym detection** and **context-based disambiguation** to improve the accuracy of text processing for Myanmar NLP tasks.  
 
 ---
 
 ## Features
-- Syllable segmentation using Myanmar character classes  
-- Rule-based sequence checking with lookup tables  
-- Lexicon-based word segmentation with greedy longest-match  
-- Multi-threaded processing for efficiency  
+- Integration with **mmTokenizer** for segmentation support  
+- Detects homonyms in Myanmar text using a predefined dictionary  
+- Context-based disambiguation using n-gram probability models (unigram, bigram, trigram)
+- Conversion utilities between **Zawgyi** and **Unicode**  
 
 ---
 
@@ -18,8 +17,8 @@ It provides **syllable segmentation** and **word segmentation** using rule-based
 Clone and install locally:
 
 ```bash
-git clone https://github.com/yourusername/mmTokenizer.git
-cd mmTokenizer
+git clone https://github.com/yourusername/mmHomonymDisambiguator.git
+cd mmHomonymDisambiguator
 pip install .
 ```
 
@@ -27,44 +26,80 @@ pip install .
 
 ## Usage
 
-### Syllable Segmenter
+### Homonym Detection
 
 ```python
-from mmTokenizer import syllableSegment
+from modules.mmHomonymDetector import HomonymDetector
 
-input_text = "လူတိုင်းသည် တူညီလွတ်လပ်သော အခွင့်အရေးများဖြင့်လည်းကောင်း၊ မွေးဖွားလာသူများဖြစ်သည်။"
-syllable_seg_out = syllableSegment(input_text)
-print(syllable_seg_out)  # လူ|တိုင်း|သည်| |တူ|ညီ|လွတ်|လပ်|သော| |ဂုဏ်|သိက္ခာ|ဖြင့်|လည်း|ကောင်း|၊ |တူ|ညီ|လွတ်|လပ်|သော| |အ|ခွင့်|အ|ရေး|များ|ဖြင့်|လည်း|ကောင်း|၊ |မွေး|ဖွား|လာ|သူ|များ|ဖြစ်|သည်|။ 
-
+detector = HomonymDetector()
+text = "မိမိအခန်းထဲတွင် ဂီတများကို ကြားနေရသည်။"
+homonyms = detector.detect(text)
+print(homonyms)  # e.g., [('ဂီတ', 'homonym entry')]
 ```
 
-### Word Segmenter
+### Homonym Disambiguation
 
 ```python
-input_text = "လူတိုင်းသည် တူညီလွတ်လပ်သော အခွင့်အရေးများဖြင့်လည်းကောင်း၊ မွေးဖွားလာသူများဖြစ်သည်။"
-word_seg_out = wordSegment(input_text)
-print(syllable_seg_out)  # လူ|တိုင်း|သည်| |တူညီ|လွတ်လပ်|သော| |ဂုဏ်သိက္ခာ|ဖြင့်|လည်းကောင်း|၊ |တူညီ|လွတ်လပ်|သော| |အခွင့်အရေး|များ|ဖြင့်|လည်းကောင်း|၊ |မွေးဖွားလာသူ|များ|ဖြစ်|သည်|။
+from mmHomonymDisambiguator import HomonymDisambiguationSystem
 
+system = HomonymDisambiguationSystem()
+text = "ကျောင်းသားများစာအုပ်များဖတ်နေသည်။"
+result = system.disambiguate(text)
+print(result)  # Disambiguated text with resolved homonyms
 ```
+
+### Zawgyi ↔ Unicode Conversion
+
+```python
+system = HomonymDisambiguationSystem()
+zg_text = "abc"  # Zawgyi sample
+uni_text = system.zg2uni(zg_text)
+print(uni_text)
+
+back_to_zg = system.uni2zg(uni_text)
+print(back_to_zg)
+```
+
+---
 
 ## Folder Structure
 ```
-./mmTokenizer/
-├── __init__.py
+./mmHomonymDisambiguator/
 ├── LICENSE
-├── mmTokenizer.py
+├── mmHomonymDisambiguator.py
+├── modules
+│   ├── __init__.py
+│   ├── mmHomonymDetector.py
+│   ├── mmTokenizer.py
+│   └── rabbit.py
 ├── myanmar_text_data
-│   └── lexicon-1.txt
+│   ├── HomonymWords.txt
+│   └── TokenTextCorpus.txt
 ├── README.md
+├── reference
+│   ├── A_Rule-based_Syllable_Segmentation_of_Myanmar_Text.pdf
+│   └── Myanmar_Homonym_Disambiguation_System.pdf
 ├── requirements.txt
 ├── setup.py
 └── tests
-    └── test_mmtokenizer.py
+    ├── test_mmtokenizer.py
+    └── test_mmHomonymDisambiguator.py
 ```
+
+---
 
 ## Author
 - Zar Zar Hlaing
 
+---
+
 ## References
-- Z. M. Maung and Y. Mikami, “A rule-based syllable segmentation of Myanmar text,” ResearchGate, Jan. 2008, [Online]. Available: https://www.researchgate.net/publication/253745697_A_Rule-based_Syllable_Segmentation_of_Myanmar_Text
-- H. Htay and K. N. Murthy, “Myanmar Word Segmentation using Syllable level Longest Matching,” 2008. https://www.semanticscholar.org/paper/Myanmar-Word-Segmentation-using-Syllable-level-Htay-Murthy/077d3a55fd053af3aa1aa8e6f07147bcf7d7bc48
+- Z. M. Maung and Y. Mikami, “[A Rule-based Syllable Segmentation of Myanmar Text](https://aclanthology.org/I08-3010/),” *Proceedings of the IJCNLP-08 Workshop on NLP for Less Privileged Languages*, Hyderabad, India, Jan. 2008.
+- Z. Z. Hlaing and A. Thida, “[Myanmar Homonym Disambiguation System.](https://meral.edu.mm/records/3488)”
+
+---
+
+## Citation
+If you use this repository for research or projects related to Myanmar homonym disambiguation, please cite the paper:
+
+- Z. Z. Hlaing and A. Thida, “[Myanmar Homonym Disambiguation System](https://meral.edu.mm/records/3488)”
