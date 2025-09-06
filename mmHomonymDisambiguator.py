@@ -5,7 +5,6 @@ from modules.rabbit import Rabbit
 from modules.mmHomonymDetector import detect_homonyms
 from modules.mmTokenizer import syllableSegment
 
-
 class HomonymDisambiguationSystem:
     def __init__(self, homo_file: str = None):
         """Initialize the system and set homonym file path."""
@@ -171,27 +170,17 @@ class HomonymDisambiguationSystem:
 
         return sum(probs) / len(probs) if probs else 0.0
 
-    def zg2uni(self, text: str) -> str:
-        """Convert Zawgyi to Unicode."""        
-        return Rabbit.zg2uni(text)
-
-    def uni2zg(self, text: str) -> str:
-        """Convert Unicode to Zawgyi."""        
-        return Rabbit.zg2uni(text)
-
 def main():
     system = HomonymDisambiguationSystem()
     text = "လူတိုင်းသည် တူညီ လွတ်လတ်သော ဂုဏ်သိက္ခာဖြင့်..."
     print("Input:\t", text)
 
-
-    tokenized, homonyms = system.process_input(text)
-    print("Tokenized Text:\t", tokenized)
-    print("Homonyms:\t", homonyms)
+    tokenized_text, detected_homonyms = system.process_input(text)
+    print("Tokenized Text:\t", tokenized_text)
+    print("Detected Homonyms:\t", detected_homonyms)
 
     result = system.disambiguate_homonyms()
     print("\nResult:\t", result)
-
 
 if __name__ == "__main__":
     main()
