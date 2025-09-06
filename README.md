@@ -78,6 +78,6 @@ print(final_out_with_correct_homonyms) #အတတ်ပညာ
 ---
 
 ## Citation
-If you use this repository for research or projects related to Myanmar homonym disambiguation, please cite the paper:
+If you use the library or data from this repository in research or projects related to Myanmar homonym disambiguation, please cite the following paper:
 
 - Z. Z. Hlaing and A. Thida, “[Myanmar Homonym Disambiguation System](https://meral.edu.mm/records/3488)”
