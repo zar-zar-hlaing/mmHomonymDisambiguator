@@ -119,7 +119,7 @@ pip install .
 
 ## Usage
 
-### Homonym Detection && Homonym Disambiguation
+### Homonym Detection && Disambiguation
 
 ```python
 from mmHomonymDisambiguator import HomonymDisambiguationSystem
