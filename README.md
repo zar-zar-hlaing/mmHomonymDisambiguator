@@ -96,7 +96,15 @@ End
 - In **Myanmar**, homonyms such as *ကျိုး/ကြိုး* or *ကျား/ကြား* show how the same sound or spelling can represent very different concepts.  
 - Correctly handling homonyms is essential in **Myanmar NLP tasks** such as translation, speech recognition, and text classification.  
 
+### Flowchart
 
+The following flowchart illustrates the **homonym detection and disambiguation process**:
+
+![Homonym Disambiguation Flowchart](reference/flowchart.png)
+
+You can see the step-by-step process from input, homonym detection, temporary storage, n-gram disambiguation, to the final output.  
+
+---
 
 ## Features
 - Integration with **mmTokenizer** for segmentation support  
