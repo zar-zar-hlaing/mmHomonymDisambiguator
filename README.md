@@ -8,7 +8,6 @@
 - Integration with **mmTokenizer** for segmentation support  
 - Detects homonyms in Myanmar text using a predefined dictionary  
 - Context-based disambiguation using n-gram probability models (unigram, bigram, trigram)
-- Conversion utilities between **Zawgyi** and **Unicode**  
 
 ---
 
@@ -26,40 +25,19 @@ pip install .
 
 ## Usage
 
-### Homonym Detection
-
-```python
-from modules.mmHomonymDetector import HomonymDetector
-
-detector = HomonymDetector()
-text = "မိမိအခန်းထဲတွင် ဂီတများကို ကြားနေရသည်။"
-homonyms = detector.detect(text)
-print(homonyms)  # e.g., [('ဂီတ', 'homonym entry')]
-```
-
-### Homonym Disambiguation
+### Homonym Detection && Homonym Disambiguation
 
 ```python
 from mmHomonymDisambiguator import HomonymDisambiguationSystem
 
 system = HomonymDisambiguationSystem()
-text = "ကျောင်းသားများစာအုပ်များဖတ်နေသည်။"
-result = system.disambiguate(text)
-print(result)  # Disambiguated text with resolved homonyms
+input_text = "အတက်ပညာ"
+tokenized_text, detected_homonyms = system.process_input(input_text)
+print(detected_homonyms)  # e.g., ['တက်', 'ညာ']
+
+final_out_with_correct_homonyms = system.disambiguate_homonyms()
+print(final_out_with_correct_homonyms) #အတတ်ပညာ
 ```
-
-### Zawgyi ↔ Unicode Conversion
-
-```python
-system = HomonymDisambiguationSystem()
-zg_text = "abc"  # Zawgyi sample
-uni_text = system.zg2uni(zg_text)
-print(uni_text)
-
-back_to_zg = system.uni2zg(uni_text)
-print(back_to_zg)
-```
-
 ---
 
 ## Folder Structure
