@@ -4,14 +4,41 @@
 
 ---
 
-## Myanmar Homonyms  
+## 📖 Homonyms  
 
-A **homonym** is a word that shares the same spelling or pronunciation with another word but has a different meaning.  
-In the **Myanmar language**, homonyms are very common due to the rich phonetic system and script. Many words may look or sound identical but carry completely different meanings depending on the **context**.  
+A **homonym** is a word that shares the same pronunciation or spelling with another word but has a different meaning.  
+Homonyms exist in many languages, including **English** and **Myanmar**.  
 
-This creates challenges for **natural language processing (NLP)** tasks such as machine translation, speech recognition, and text classification, where correct interpretation depends on resolving homonymy.  
+Understanding homonyms is important for **natural language processing (NLP)** because correct interpretation always depends on **context**.  
 
-### Examples of Myanmar Homonyms  
+---
+
+### English Homonyms (for clarity)  
+
+In English, the words **two**, **to**, and **too** are pronounced the same in the sentence:  
+
+> *“The two boys want to play too.”*  
+
+Although they sound alike, their spellings and meanings are different. These are **homonyms**.  
+
+**Examples of English Homonyms:**  
+
+| Word 1 | Meaning 1 | Word 2 | Meaning 2 |
+|--------|-----------|--------|-----------|
+| **Accept** | to take something that is given to you | **Except** | to leave out |
+| **Aid** | help | **Aide** | one who helps |
+| **Complement** | something that makes a thing whole or perfect | **Compliment** | to praise |
+| **Discrete** | separate | **Discreet** | modest, prudent, unobtrusive |
+| **Forth** | forward | **Fourth** | an ordinal number |
+
+---
+
+### Myanmar Homonyms (main focus)  
+
+In the **Myanmar language**, homonyms are especially common due to the rich phonetic system and script.  
+Many words may look or sound the same but carry very different meanings depending on **context**.  
+
+**Examples of Myanmar Homonyms:**  
 
 | Word 1 | Meaning 1 | Word 2 | Meaning 2 |
 |--------|-----------|--------|-----------|
@@ -21,11 +48,15 @@ This creates challenges for **natural language processing (NLP)** tasks such as 
 | **တန်း** | line, row; class/level | **တမ်း** | draft, note, informal record |
 | **ခမ်း** | ceremonial; formal occasion | **ခန်း** | section, stanza, room |
 
-### Summary  
+---
 
-- Homonyms in Myanmar can **look the same, sound the same, or both**, yet represent **different meanings**.  
-- Context plays a critical role in distinguishing them.  
-- Addressing Myanmar homonymy is essential for improving **linguistic research** and **NLP applications**.  
+### 📌 Summary  
+
+- Homonyms are words that **look or sound alike but have different meanings**.  
+- In **English**, homonyms include pairs like *accept/except* or *discrete/discreet*.  
+- In **Myanmar**, homonyms such as *ကျိုး/ကြိုး* or *ကျား/ကြား* show how the same sound or spelling can represent very different concepts.  
+- Correctly handling homonyms is essential in **Myanmar NLP tasks** such as translation, speech recognition, and text classification.  
+
 
 
 ## Features
