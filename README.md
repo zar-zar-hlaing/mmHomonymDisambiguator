@@ -50,6 +50,45 @@ Many words may look or sound the same but carry very different meanings dependin
 
 ---
 
+## Homonyms and Ambiguous Homonyms Detection and Disambiguation
+
+This section describes the algorithm used to detect **homonym words** in a given text and resolve ambiguous cases using a **Corpus-Based N-Gram Model**.
+
+### Steps
+
+1. Take tokenized text as input.  
+2. Convert the tokenized text into a string array `tokens[]`.  
+3. Read the text file containing homonym words and convert it into a string array `textWords[]`.  
+4. For each value in `tokens[]`:  
+   - If the value exists in `textWords[]`, mark it as a homonym.  
+   - Append this homonym word to the string `tempHomonyms`.  
+5. Apply a **Corpus-Based N-Gram Model** on `tempHomonyms` to disambiguate homonyms:  
+   - The model calculates the **probability of each possible homonym** based on its context.  
+   - Select the homonym with the **highest probability** as the correct one.  
+   - Replace ambiguous homonyms in the text with the **most probable correct homonym**.  
+   - If no homonyms are found, retain the original text.  
+
+### Pseudocode
+
+```
+Begin
+  1. Take tokenized text as input
+  2. Convert the tokenized text into string array tokens[]
+  3. Read the text file containing homonym words into string array textWords[]
+  4. For each value in tokens[]:
+       if (value ∈ textWords[])
+           mark value as homonym
+           append value to tempHomonyms
+  5. Apply Corpus-Based N-Gram Model on tempHomonyms:
+       for each homonym in tempHomonyms:
+           calculate probability for all possible meanings
+           select the homonym with the highest probability
+           replace in text with the most probable homonym
+       if no homonyms are found:
+           retain original text
+End
+```
+
 ### 📌 Summary  
 
 - Homonyms are words that **look or sound alike but have different meanings**.  
