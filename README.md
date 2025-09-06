@@ -16,7 +16,7 @@
 Clone and install locally:
 
 ```bash
-git clone https://github.com/yourusername/mmHomonymDisambiguator.git
+git clone https://github.com/zar-zar-hlaing/mmHomonymDisambiguator.git
 cd mmHomonymDisambiguator
 pip install .
 ```
