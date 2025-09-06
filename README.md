@@ -4,6 +4,30 @@
 
 ---
 
+## Myanmar Homonyms  
+
+A **homonym** is a word that shares the same spelling or pronunciation with another word but has a different meaning.  
+In the **Myanmar language**, homonyms are very common due to the rich phonetic system and script. Many words may look or sound identical but carry completely different meanings depending on the **context**.  
+
+This creates challenges for **natural language processing (NLP)** tasks such as machine translation, speech recognition, and text classification, where correct interpretation depends on resolving homonymy.  
+
+### Examples of Myanmar Homonyms  
+
+| Word 1 | Meaning 1 | Word 2 | Meaning 2 |
+|--------|-----------|--------|-----------|
+| **ကျိုး** | to break, fracture; consequence | **ကြိုး** | rope, string; to attempt |
+| **ကျား** | tiger | **ကြား** | to hear; between (in the middle of) |
+| **စီ** | to arrange, to line up | **စည်** | prosperous, lively; drum |
+| **တန်း** | line, row; class/level | **တမ်း** | draft, note, informal record |
+| **ခမ်း** | ceremonial; formal occasion | **ခန်း** | section, stanza, room |
+
+### Summary  
+
+- Homonyms in Myanmar can **look the same, sound the same, or both**, yet represent **different meanings**.  
+- Context plays a critical role in distinguishing them.  
+- Addressing Myanmar homonymy is essential for improving **linguistic research** and **NLP applications**.  
+
+
 ## Features
 - Integration with **mmTokenizer** for segmentation support  
 - Detects homonyms in Myanmar text using a predefined dictionary  
