@@ -4,7 +4,7 @@
 
 ---
 
-## 📖 Homonyms  
+## Homonyms  
 
 A **homonym** is a word that shares the same pronunciation or spelling with another word but has a different meaning.  
 Homonyms exist in many languages, including **English** and **Myanmar**.  
