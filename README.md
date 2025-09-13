@@ -120,7 +120,7 @@ Clone and install locally:
 ```bash
 git clone https://github.com/zar-zar-hlaing/mmHomonymDisambiguator.git
 cd mmHomonymDisambiguator
-pip install .
+python3 -m pip install -e .
 ```
 
 ---
