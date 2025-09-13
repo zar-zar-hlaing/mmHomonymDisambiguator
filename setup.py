@@ -10,7 +10,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/zar-zar-hlaing/mmHomonymDisambiguator",
     license="MIT",
-    packages=find_packages(include=["modules", "modules.*"]),
+    packages=find_packages(),
     py_modules=["mmHomonymDisambiguator"],
     python_requires=">=3.8",
     install_requires=[
@@ -30,7 +30,7 @@ setup(
     ],
     include_package_data=True,
     package_data={
-        "": [
+        "mmHomonymDisambiguator": [
             "myanmar_text_data/*.txt",
             "reference/*.pdf",
         ],
