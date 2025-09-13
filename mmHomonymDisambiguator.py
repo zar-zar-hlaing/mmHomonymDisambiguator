@@ -9,7 +9,8 @@ class HomonymDisambiguationSystem:
     def __init__(self, homo_file: str = None):
         """Initialize the system and set homonym file path."""
         if homo_file is None:
-            base_dir = os.path.dirname(os.path.abspath(__file__))
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            base_dir = os.path.abspath(os.path.join(current_dir, "."))
             homo_file = os.path.join(base_dir, "myanmar_text_data", "HomonymWords.txt")
         self.homo_file = homo_file
 
@@ -35,7 +36,8 @@ class HomonymDisambiguationSystem:
 
     def _load_corpus_data(self):
         """Load corpus data and build n-gram counts."""
-        base_dir = os.path.dirname(os.path.abspath(__file__))
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.path.abspath(os.path.join(current_dir, "."))
         corpus_file = os.path.join(base_dir, "myanmar_text_data", "TokenTextCorpus.txt")
 
         if not os.path.exists(corpus_file):
