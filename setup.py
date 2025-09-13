@@ -4,7 +4,7 @@ setup(
     name="mmHomonymDisambiguator",
     version="0.1.0",
     author="Zar Zar Hlaing",
-    author_email="zarzarhlaing12@gmail.com",
+    author_email="zarzarhlaing.it@gmail.com",
     description="Myanmar Homonym Disambiguation system using n-gram probability model",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
